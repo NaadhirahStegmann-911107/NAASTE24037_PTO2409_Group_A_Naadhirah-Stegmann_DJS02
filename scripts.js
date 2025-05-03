@@ -21,5 +21,10 @@ form.addEventListener("submit", (event) => {
     ReportBody.innerHTML = "<h1>Somthing critical went wrong. Please reload the page.</h1>";
     return;
   }
-  
+
+  //Converts inputs(strings) to numbers
+  const dividendNum = Number(dividend);
+  const dividerNum = Number(divider);
+   
+
 });
