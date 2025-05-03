@@ -25,6 +25,12 @@ form.addEventListener("submit", (event) => {
   //Converts inputs(strings) to numbers
   const dividendNum = Number(dividend);
   const dividerNum = Number(divider);
-   
+  
+  //Scenario: An invalid division (division by zero)
+  if (dividerNum === 0) {
+    result.innerText = "Division not performed. Invalid number provided. Try again.";
+    console.error(new Error("Division by zero attempted"));
+    return;
+  }
 
 });
