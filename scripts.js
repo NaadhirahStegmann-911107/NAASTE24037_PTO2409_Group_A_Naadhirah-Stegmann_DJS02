@@ -33,4 +33,8 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  //Scenario: Dividing numbers (whole number or decimal result)
+  const quotient = Math.floor(dividendNum / dividerNum);
+  result.innerText = quotient;
+
 });
