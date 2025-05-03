@@ -14,6 +14,12 @@ form.addEventListener("submit", (event) => {
     result.innerText = "Division cannot be performed. Both input values are required. Please try again.";
     return;
   }
-
+  
+  //Scenario: Providing anything that is not a number would crash the programme
+  if (isNaN(dividend) || isNaN(divider)) {
+    console.error(new Error("Non-numeric input provided."));
+    ReportBody.innerHTML = "<h1>Somthing critical went wrong. Please reload the page.</h1>";
+    return;
+  }
   
 });
