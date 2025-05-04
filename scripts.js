@@ -22,7 +22,7 @@ form.addEventListener("submit", (event) => {
   //Scenario: Providing anything that is not a number would crash the programme
   if (isNaN(dividend) || isNaN(divider)) {
     console.error(new Error("Non-numeric input provided."));
-    ReportBody.innerHTML = "<h1>Somthing critical went wrong. Please reload the page.</h1>";
+    body.innerHTML = "<h1>Somthing critical went wrong. Please reload the page.</h1>";
     return;
   }
 
