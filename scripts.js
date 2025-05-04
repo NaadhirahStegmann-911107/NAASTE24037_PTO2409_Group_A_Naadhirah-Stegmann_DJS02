@@ -1,10 +1,14 @@
 const form = document.querySelector("[data-form]");
 const result = document.querySelector("[data-result]");
+const body = document.getElementById("mainBody");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const entries = new FormData(event.target);
   const { dividend, divider } = Object.fromEntries(entries);
+
+  //Log input values to verify what was entered
+  console.log(`Input values: dividend = ${dividend}, divider = ${divider}`)
 
   //Reset result display
   result.innerText = " ";
@@ -25,6 +29,9 @@ form.addEventListener("submit", (event) => {
   //Converts inputs(strings) to numbers
   const dividendNum = Number(dividend);
   const dividerNum = Number(divider);
+
+  //Log converted numbers to verify cenversion
+  console.log(`Converted numbers: dividendNum = ${dividendNum}, dividerNum = ${dividerNum}`)
   
   //Scenario: An invalid division (division by zero)
   if (dividerNum === 0) {
@@ -35,6 +42,9 @@ form.addEventListener("submit", (event) => {
 
   //Scenario: Dividing numbers (whole number or decimal result)
   const quotient = Math.floor(dividendNum / dividerNum);
-  result.innerText = quotient;
 
+  //Log quotient to verify calculation
+  console.log(`Calculated quotient: ${quotient}`);
+
+  result.innerText = quotient;
 });
